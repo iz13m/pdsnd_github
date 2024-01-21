@@ -189,12 +189,10 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
-        display = input('\nDo you want to see the first 5 rows of data? Enter yes or no.\n')
-        if display.lower() == 'yes':
+        if input('\nDo you want to see the first 5 rows of data? Enter yes or no.\n').lower() == 'yes':
             display_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        if input('\nWould you like to restart? Enter yes or no.\n').lower() != 'yes':
             break
 
 
