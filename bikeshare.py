@@ -6,6 +6,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 months = ['jan','feb','mar','apr','may','jun']
+week_days = {"mon":'Monday', "tue":"Tuesday", "wed":"Wednesday", "thu":"Thursday", "fri":"Friday","sat":"Saturday", "sun":"Sunday"}
 
 def get_filters():
     """
@@ -41,7 +42,6 @@ def get_filters():
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         try:
-            week_days = {"mon":'Monday', "tue":"Tuesday", "wed":"Wednesday", "thu":"Thursday", "fri":"Friday","sat":"Saturday", "sun":"Sunday"}
             day = input("Please enter the week day you want to analyze in short form \nex: sat, sun    *you can type all ...\n").lower().strip()
             if day != 'all':
                 day = week_days[day]
@@ -189,12 +189,10 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
-        display = input('\nDo you want to see the first 5 rows of data? Enter yes or no.\n')
-        if display.lower() == 'yes':
+        if input('\nDo you want to see the first 5 rows of data? Enter yes or no.\n').lower() == 'yes':
             display_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        if input('\nWould you like to restart? Enter yes or no.\n').lower() != 'yes':
             break
 
 
